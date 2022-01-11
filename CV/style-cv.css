@@ -1,0 +1,327 @@
+/*  colors  */
+
+:root {
+    --dark-blue: #0e135c;
+    --light-blue: #113e79;
+}
+
+
+/*  colors - end   */
+
+
+/*  main divs */
+
+.main_window * {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#cv_form {
+    display: flex;
+    min-height: 1250px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*  main divs - end  */
+
+
+/*  diagonal lines  */
+
+.diagonal_line {
+    position: absolute;
+    border-left: 6px solid var(--light-blue);
+    height: 30px;
+    opacity: 0;
+    transform: translateX(-20px) rotate(45deg);
+    z-index: 5;
+}
+
+#line_1 {
+    animation: diagonal 10s linear 1s infinite normal;
+}
+
+#line_2 {
+    animation: diagonal 15s linear 1s infinite normal;
+}
+
+#line_3 {
+    animation: diagonal 20s linear 1s infinite normal;
+}
+
+
+/*  diagonal lines - end */
+
+
+/*  side bar  */
+
+.left {
+    animation: left 1s linear 0s 1;
+}
+
+.right {
+    animation: right 1s linear 0s 1;
+}
+
+#gmail {
+    animation: right 1s linear 0s 1, jump 10s linear 3s infinite;
+}
+
+#linkedin {
+    animation: left 1s linear 0s 1, jump 10s linear 3s infinite;
+}
+
+#github {
+    animation: opacity 5s linear 0s 1, jump 10s linear 3s infinite;
+}
+
+.common_info {
+    width: 25%;
+    background-color: var(--dark-blue);
+    color: #fff;
+}
+
+.contact {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.aligned {
+    padding-left: 30px;
+}
+
+.header {
+    background-color: var(--light-blue);
+    padding: 3px 0 3px 30px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+#main * {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.names {
+    font-size: 3em;
+}
+
+#surname {
+    bottom: 20px;
+}
+
+#profession {
+    bottom: 20px;
+    font-size: 2em;
+}
+
+#skills .aligned * {
+    padding: 5px 0;
+    padding-left: 30px;
+}
+
+
+/*  side bar - end */
+
+
+/*  detailed info  */
+
+#detailed_info {
+    width: 65%;
+    margin: 20px 0 0 50px;
+}
+
+.head {
+    display: inline-block;
+    font-size: 1.9rem;
+    color: #1d26a5;
+    margin-bottom: 10px;
+}
+
+.summary {
+    display: flex;
+    font-size: 1.4rem;
+    color: #000;
+    margin: 10px 0;
+    animation: opacity 2s linear 0s;
+}
+
+span.move {
+    display: inline-block;
+    line-height: 1em;
+    opacity: 0;
+}
+
+.date * {
+    min-width: 200px;
+}
+
+.bullet_points * {
+    margin-top: 5px;
+    font-size: 0.8em;
+}
+
+h1 {
+    animation: h 10s linear 5s infinite;
+}
+
+h2 {
+    animation: h 10s linear 5.1s infinite;
+}
+
+h3 {
+    animation: h 10s linear 5.2s infinite;
+}
+
+h4 {
+    animation: h 10s linear 5.3s infinite;
+}
+
+h5 {
+    animation: h 10s linear 5.4s infinite;
+}
+
+
+/*  detailed info - end  */
+
+
+/*  certificates  */
+
+#docs_header {
+    margin: auto;
+    margin-bottom: 100px;
+    width: 30%;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 50px;
+}
+
+#docs_header_delimiter {
+    transform: translateY(-100px);
+    width: 40%;
+    margin: auto;
+    border: solid 1px #000;
+}
+
+.documents {
+    display: flex;
+}
+
+.img_title {
+    font: 20px bold, Arial;
+    margin: auto !important;
+    width: 80%;
+    text-align: center;
+    animation: opacity 5s linear 0s 1, jump 10s linear 3s infinite;
+}
+
+img {
+    margin: auto !important;
+    display: block;
+    width: 80%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/*  certificates  */
+
+
+/*******************************************************************************/
+
+
+/*  animations  */
+
+
+/*  for side bar  */
+
+@keyframes left {
+    0% {
+        opacity: 0;
+        left: -50px;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes right {
+    0% {
+        opacity: 0;
+        right: -50px;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes diagonal {
+    0% {
+        opacity: 1;
+        left: 30px;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        left: 200px;
+    }
+}
+
+
+/*  for side bar - end  */
+
+
+/*  for main body  */
+
+@keyframes h {
+    0% {
+        opacity: 0;
+    }
+    20%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    60%,
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*  for main body - end  */
+
+
+/*  images  */
+
+@keyframes jump {
+    10% {
+        color: #f00;
+        transform: translateY(-10px);
+    }
+    40%,
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/*  images - end */
+
+
+/*  animations - end  */
